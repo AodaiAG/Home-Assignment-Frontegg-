@@ -1,10 +1,9 @@
 import './App.css';
-import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react';
+import {useAuth, useLoginWithRedirect, ContextHolder} from '@frontegg/react';
 import { AdminPortal } from '@frontegg/react';
 import TenantSwitcher from './components/TenantSwitcher';
 import { Route, Routes } from 'react-router-dom'; // Use Routes and Route for navigation
 import OAuthCallback from './components/OAuthCallback';  // Import the OAuthCallback component
-
 function App() {
     const { user, isAuthenticated } = useAuth();
     const loginWithRedirect = useLoginWithRedirect();
