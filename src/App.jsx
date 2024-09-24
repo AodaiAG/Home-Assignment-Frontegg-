@@ -2,8 +2,8 @@ import './App.css';
 import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react';
 import { AdminPortal } from '@frontegg/react';
 import TenantSwitcher from './components/TenantSwitcher';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import OAuthCallback from './components/OAuthCallback';  // We'll create this
+import { Route, Routes } from 'react-router-dom'; // Use Routes and Route for navigation
+import OAuthCallback from './components/OAuthCallback';  // Import the OAuthCallback component
 
 function App() {
     const { user, isAuthenticated } = useAuth();
@@ -19,13 +19,14 @@ function App() {
     };
 
     return (
-        <Router>
-            <Switch>
-                {/* Route for OAuth callback */}
-                <Route path="/oauth/callback" component={OAuthCallback} />
+        <Routes>
+            {/* Route for OAuth callback */}
+            <Route path="/oauth/callback" element={<OAuthCallback />} />
 
-                {/* Main route for authenticated and unauthenticated users */}
-                <Route path="/" exact>
+            {/* Main route for authenticated and unauthenticated users */}
+            <Route
+                path="/"
+                element={
                     <div className="App">
                         {isAuthenticated ? (
                             <div>
@@ -52,9 +53,9 @@ function App() {
                             </div>
                         )}
                     </div>
-                </Route>
-            </Switch>
-        </Router>
+                }
+            />
+        </Routes>
     );
 }
 
