@@ -48,7 +48,7 @@ function App() {
                             </div>
                         ) : (
                             <div>
-                                <button onClick={() => loginWithRedirect()}>Click me to login</button>
+                                <button onClick={() => loginWithRedirect()}>Click me</button>
                             </div>
                         )}
                     </div>
