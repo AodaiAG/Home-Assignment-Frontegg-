@@ -1,7 +1,7 @@
 import './App.css';
 import { useAuth, useLoginWithRedirect, ContextHolder } from '@frontegg/react';
 import { AdminPortal } from '@frontegg/react';
-import TenantSwitcher from './components/TenantSwitcher';  // Import the TenantSwitcher component
+import TenantSwitcher from './components/TenantSwitcher';
 
 function App() {
     const { user, isAuthenticated } = useAuth();
@@ -35,7 +35,7 @@ function App() {
                     <div>
                         <button onClick={openAdminPortal}>Settings</button>
                     </div>
-                    {/* Add the TenantSwitcher here */}
+                    {}
                     <TenantSwitcher />
                 </div>
             ) : (
